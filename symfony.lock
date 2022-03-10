@@ -35,6 +35,12 @@
             "config/packages/sensio_framework_extra.yaml"
         ]
     },
+    "sensiolabs/security-checker": {
+        "version": "6.0",
+        "recipe": {
+            "version": "4.0"
+        }
+    },
     "symfony/cache": {
         "version": "v4.4.38"
     },
@@ -116,6 +122,9 @@
             "src/Controller/.gitignore",
             "src/Kernel.php"
         ]
+    },
+    "symfony/http-client": {
+        "version": "v4.4.39"
     },
     "symfony/http-client-contracts": {
         "version": "v2.5.0"
