@@ -4,12 +4,8 @@
     Read {{ title }}
 {% endblock %}
 
-{% block body %}
-    
+{% block body %}    
 <h1>{{ title }}</h1>
-<pre>
-    {{ dump() }}
-</pre>
 
 <div class="#">
     <p>
@@ -30,5 +26,4 @@
         <li>{{ comment }}</li>
     {% endfor %}
 </ul>
-
 {% endblock %}
