@@ -30,7 +30,7 @@ class ArticleController extends AbstractController
             $message = $slack->createMessage()
                 ->from('Khan')
                 ->withIcon(':ghost:')
-                ->setText('Ovo je iz symfony aplikacije za probu...');
+                ->setText('Još jedna test iz symfony.');
 
             $slack->sendMessage($message);
         }
