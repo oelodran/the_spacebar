@@ -10,6 +10,7 @@
         "doctrine/orm": "^2.11",
         "guzzlehttp/psr7": "^1.6.1",
         "knplabs/knp-markdown-bundle": "^1.9",
+        "knplabs/knp-time-bundle": "^1.18",
         "nexylan/slack-bundle": "^2.2",
         "nyholm/psr7": "^1.5",
         "php-http/guzzle6-adapter": "^2.0",
