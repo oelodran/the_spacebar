@@ -8,11 +8,28 @@ use Doctrine\Persistence\ObjectManager;
 
 class ArticleFixtures extends BaseFixture
 {
+    private static $articleTitles = [
+        'Why Asteroids Taste Like Bacon',
+        'Life on Planet Mercury: Tan, Relaxing and Fabulous',
+        'Light Speed Travel: Fountain of Youth or Fallacy',
+    ];
+
+    private static $articleImages = [
+        'asteroid.jpeg',
+        'mercury.jpeg',
+        'lightspeed.png',
+    ];
+
+    private static $articleAuthors = [
+        'Mike Ferengi',
+        'Leonardo Ramljak',
+    ];
+
     protected function loadData(ObjectManager $manager): void
     {
         $this->createMany(Article::class, 10, function(Article $article, $count) { 
-            $article->setTitle('Why Astroids Taste Like Bacon')
-                ->setSlug('why-astroids-taste-like-bacon-' . $count)
+            $article->setTitle($this->faker->randomElement(self::$articleTitles))
+                ->setSlug($this->faker->slug)
                 ->setContent(
                     $articleContent = <<<EOF
             Spicy **jalapeno bacon** ipsum dolor amet veniam shank in dolore. Ham hock nisi landjaeger cow,
@@ -35,15 +52,15 @@ class ArticleFixtures extends BaseFixture
                 );
     
             // publish most articles
-            if (rand(1, 10) > 2) {
-                $article->setPublishedAt(new \DateTime(sprintf('-%d days', rand(1, 100))));
+            if ($this->faker->boolean(70)) {
+                $article->setPublishedAt($this->faker->dateTimeBetween('-100 days', '-1 days'));
             }
     
-            $article->setAuthor('Leonardo Ramljak')
-                ->setHeartCount(rand(5, 100))
-                ->setImageFilename('asteroid.jpeg');
+            $article->setAuthor($this->faker->randomElement(self::$articleAuthors))
+                ->setHeartCount($this->faker->numberBetween(5, 100))
+                ->setImageFilename($this->faker->randomElement(self::$articleImages));
         });
-        
+
         $manager->flush();            
     }
 }
