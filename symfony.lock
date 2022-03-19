@@ -1,4 +1,7 @@
 {
+    "behat/transliterator": {
+        "version": "v1.3.0"
+    },
     "clue/stream-filter": {
         "version": "v1.6.0"
     },
@@ -96,6 +99,9 @@
     },
     "fzaninotto/faker": {
         "version": "v1.9.2"
+    },
+    "gedmo/doctrine-extensions": {
+        "version": "v3.5.0"
     },
     "guzzlehttp/guzzle": {
         "version": "6.5.5"
@@ -212,6 +218,12 @@
         "version": "6.0",
         "recipe": {
             "version": "4.0"
+        }
+    },
+    "stof/doctrine-extensions-bundle": {
+        "version": "1.7",
+        "recipe": {
+            "version": "1.2"
         }
     },
     "symfony/asset": {
