@@ -71,7 +71,6 @@ class ArticleFixtures extends BaseFixture
             $comment2->setAuthorName('Leonardo Ramljak');
             $comment2->setContent('Woohoo! I\'m going on an all-asteroid diet!');
             $comment2->setArticle($article);
-            $manager->persist($comment2);
         });
 
         $manager->flush();            
