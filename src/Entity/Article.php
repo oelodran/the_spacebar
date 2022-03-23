@@ -63,7 +63,7 @@ class Article
     private $imageFilename;
 
     /**
-     * @ORM\OneToMany(targetEntity=Comment::class, mappedBy="article", fatch="EXTRA_LAZY")
+     * @ORM\OneToMany(targetEntity=Comment::class, mappedBy="article", fetch="EXTRA_LAZY")
      * @ORM\OrderBy({"createdAt" = "DESC"})
      */
     private $comments;
